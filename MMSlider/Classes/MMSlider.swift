@@ -77,6 +77,17 @@ open class MMSlider: UIControl {
             }
         }
     }
+    @IBInspectable open dynamic var valueLabelColor: UIColor? {
+        didSet {
+            valueLabels.forEach { $0.textColor = valueLabelColor }
+        }
+    }
+
+    open dynamic var valueLabelFont: UIFont? {
+        didSet {
+            valueLabels.forEach { $0.font = valueLabelFont }
+        }
+    }
 
     /// value label shows difference from previous thumb value (true) or absolute value (false = default)
     @IBInspectable open dynamic var isValueLabelRelative: Bool = false {
